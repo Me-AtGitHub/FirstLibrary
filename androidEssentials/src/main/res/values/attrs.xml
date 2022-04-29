@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppImageView">
+        <attr name="resource" format="reference"/>
+        <attr name="imageRadius" format="dimension"/>
+        <attr name="imageElevation" format="dimension"/>
+        <attr name="backgroundColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="ViewPager3">
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorViewWidth" format="dimension"/>
+        <attr name="indicatorViewHeight" format="dimension"/>
+        <attr name="colorSelectedIndicator" format="reference"/>
+        <attr name="colorUnselectedIndicator" format="reference"/>
+        <attr name="widthFactorIndicator" format="float" />
+        <attr name="heightFactorIndicator" format="float"/>
+        <attr name="indicatorPosition" format="flags">
+            <flag name="CENTER" value="0"/>
+            <flag name="START" value="1"/>
+            <flag name="END" value="2"/>
+            <flag name="TOP" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Indicators">
+        <attr name="sizeIndicator" format="dimension"/>
+        <attr name="colorIndicator" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ImageViewIndicator">
+        <attr name="indicatorCount" format="integer"/>
+        <attr name="selectedIndicatorColor" format="reference"/>
+        <attr name="unselectedIndicatorColor" format="reference"/>
+        <attr name="indicatorImageRadius" format="dimension"/>
+        <attr name="indicatorWidth" format="dimension"/>
+        <attr name="indicatorHeight" format="dimension"/>
+        <attr name="indicatorWidthFactor" format="float"/>
+        <attr name="indicatorHeightFactor" format="float"/>
+    </declare-styleable>
+
+</resources>
