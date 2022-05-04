@@ -1,5 +1,6 @@
 package com.au.androidessentials.views
 
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
@@ -28,7 +29,7 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
     var selectedIndicatorColor: Int
     var unselectedIndicatorColor: Int
 
-    private var currentPage:Int = 0
+    private var currentPage: Int = 0
 
     var indicatorWidthFactor: Float = DEFAULT_FLOAT
     var indicatorHeightFactor: Float = DEFAULT_FLOAT
@@ -61,7 +62,6 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
             DEFAULT_INT,
             DEFAULT_INT
         ).let {
-
 
             /* Selected Indicator Color */
             selectedIndicatorColor =
@@ -165,6 +165,7 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
             // exact width height //
             MeasureSpec.EXACTLY -> viewWidth = widthSize
         }
+
         when (heightMode) {
             // wrap content //
             MeasureSpec.AT_MOST -> viewHeight = DEFAULT_INT
@@ -190,7 +191,6 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
 
         setMeasuredDimension(viewWidth, viewHeight)
     }
-
 
     private fun countNeededWidth(): Int {
         var totalWidth = 0
@@ -228,6 +228,7 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
         }
     }
 
+
     override fun onPageSelected(position: Int, totalItem: Int) {
         Log.d(TAG, "onPageSelected: $position")
         currentPage = position
@@ -237,29 +238,49 @@ class ImageViewIndicator : LinearLayout, ViewPager3.PageChangeListener {
     }
 
 
-    override fun onPageScroll(position: Int, positionOffset: Float) {
-        Log.d(TAG, "onPageScroll:$position")
-        try {
-            val viewOne = getChildAt(currentPage) as AppImageView
-            val viewTwo = getChildAt(position) as AppImageView
 
-            animateViews(viewOne, viewTwo, positionOffset)
-        }catch (e:Exception){}
+    override fun onPageScroll(
+        currentPosition: Int,
+        nextPosition: Int,
+        positionOffset: Float
+    ) {
+//        Log.d(TAG, "onPageScroll:$currentPosition -- to -- $nextPosition  $positionOffset")
+        try {
+            val viewOne = getChildAt(currentPosition) as AppImageView
+            val viewTwo = getChildAt(nextPosition) as AppImageView
+            if (nextPosition > currentPosition)
+                animateViews(viewOne, viewTwo, positionOffset)
+            else
+                animateViews(viewOne, viewTwo, 1 - positionOffset)
+        } catch (e: Exception) {
+        }
     }
 
-    private fun animateViews(selectedView:AppImageView,unselectedView:AppImageView,offset:Float){
+
+    private fun animateViews(
+        selectedView: AppImageView,
+        unselectedView: AppImageView,
+        offset: Float
+    ) {
 
         val selectedWidth = indicatorWidth
         val unselectedWidth = indicatorWidth - indicatorWidthFactor
 
-        val factorDiff = selectedWidth/unselectedWidth
+        val selectedHeight = indicatorHeight
+        val unselectedHeight = indicatorHeight - indicatorHeightFactor
 
-        selectedView.scaleX = 1 - (1 - factorDiff)*offset
-        unselectedView.scaleX = 1 + (1 - factorDiff)*offset
+        val heightDifference = (selectedHeight - unselectedHeight) * offset
+        val widthDifference = (selectedWidth - unselectedWidth) * offset
 
-//        Log.d(TAG, "selectedView1:$factorDiff -------- scaleX:${1 - (factorDiff-1)*offset}\n\n\n")
-//
-//        Log.d(TAG, "unselectedView:$factorDiff -------- scaleX:${1 + (factorDiff-1)*offset}\n\n\n")
+
+        selectedView.setDimensions(
+            selectedWidth - widthDifference,
+            selectedHeight - heightDifference
+        )
+        unselectedView.setDimensions(
+            unselectedWidth + widthDifference,
+            unselectedHeight + heightDifference
+        )
 
     }
 

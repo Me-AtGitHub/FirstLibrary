@@ -22,6 +22,14 @@ class ViewPagerTestFragment:BaseFragment<FragmentTestViewPagerBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.textView.text = "$position"
+
+       /* val color = when(position){
+            0-> android.R.color.holo_red_light
+            1-> android.R.color.holo_green_light
+            else -> android.R.color.holo_purple
+        }
+
+        binding.rlRoot.setBackgroundResource(color)*/
     }
 
     companion object{

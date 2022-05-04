@@ -1,6 +1,7 @@
 package com.au.viewmodelexample.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -19,6 +20,12 @@ class NewActivity:BaseActivity<ActivityNewBinding>() {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         binding.viewPager.setAdapter(ViewPagerAdapter(this))
+        for( i in 0..15){
+            for( j in 0..15){
+                Log.d(TAG, "onCreate: $i or $j = ${i or j}")
+            }
+            Log.d(TAG, "onCreate: ----------------------------------------------------------------------")
+        }
     }
 
     class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity){

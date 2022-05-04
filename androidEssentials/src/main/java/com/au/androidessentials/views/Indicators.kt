@@ -162,8 +162,8 @@ class Indicators : View,ViewPager3.PageChangeListener {
         drawCircle(position,totalItem)
     }
 
-    override fun onPageScroll(position: Int, positionOffset: Float) {
-
+    override fun onPageScroll(currentPosition: Int, nextPosition: Int, positionOffset: Float) {
     }
+
 
 }

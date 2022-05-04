@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.22" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.2" />
         <entry key="androidEssentials/src/main/res/drawable/selected_page.xml" value="0.1" />
+        <entry key="androidEssentials/src/main/res/layout/custom_layout.xml" value="0.2" />
         <entry key="androidEssentials/src/main/res/layout/image_view.xml" value="0.15833333333333333" />
         <entry key="androidEssentials/src/main/res/layout/layout_circuler_image.xml" value="0.2" />
+        <entry key="androidEssentials/src/main/res/layout/layout_levatating_page_view_pager.xml" value="0.15833333333333333" />
         <entry key="androidEssentials/src/main/res/layout/layout_recycler_view.xml" value="0.15833333333333333" />
-        <entry key="androidEssentials/src/main/res/layout/layout_view_pager_with_indicator.xml" value="0.33" />
+        <entry key="androidEssentials/src/main/res/layout/layout_view_pager_with_indicator.xml" value="0.28651685393258425" />
         <entry key="app/src/main/res/drawable/black_stroke_curved_white_bg.xml" value="0.102" />
         <entry key="app/src/main/res/drawable/button_bg.xml" value="0.102" />
         <entry key="app/src/main/res/drawable/button_bg_gray.xml" value="0.1295" />
@@ -36,7 +38,7 @@
         <entry key="app/src/main/res/drawable/walk_images_bg_colored.xml" value="0.1295" />
         <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.33665559246954596" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_new.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_new.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.25" />
         <entry key="app/src/main/res/layout/add_new_contact.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/country_code_picker.xml" value="0.25" />

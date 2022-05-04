@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="AppImageView">
         <attr name="resource" format="reference"/>
         <attr name="imageRadius" format="dimension"/>
         <attr name="imageElevation" format="dimension"/>
         <attr name="backgroundColor" format="color"/>
     </declare-styleable>
+
     <declare-styleable name="ViewPager3">
         <attr name="indicatorRadius" format="dimension"/>
         <attr name="indicatorViewWidth" format="dimension"/>
@@ -15,10 +17,14 @@
         <attr name="widthFactorIndicator" format="float" />
         <attr name="heightFactorIndicator" format="float"/>
         <attr name="indicatorPosition" format="flags">
-            <flag name="CENTER" value="0"/>
-            <flag name="START" value="1"/>
-            <flag name="END" value="2"/>
-            <flag name="TOP" value="3"/>
+            <flag name="START" value="0"/>
+            <flag name="END" value="1"/>
+            <flag name="TOP" value="2"/>
+            <flag name="BOTTOM" value="3"/>
+            <flag name="CENTER_HORIZONTAL" value="4"/>
+            <flag name="CENTER_VERTICAL" value="5"/>
+            <flag name="BELOW" value="6"/>
+            <flag name="ABOVE" value="7"/>
         </attr>
     </declare-styleable>
 
@@ -36,6 +42,11 @@
         <attr name="indicatorHeight" format="dimension"/>
         <attr name="indicatorWidthFactor" format="float"/>
         <attr name="indicatorHeightFactor" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomViewPager">
+        <attr name="itemHorizontalMargin" format="dimension"/>
+        <attr name="nextItemVisible" format="dimension"/>
     </declare-styleable>
 
 </resources>

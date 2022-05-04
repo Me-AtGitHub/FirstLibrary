@@ -3,8 +3,11 @@ package com.au.androidessentials.views
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import androidx.cardview.widget.CardView
 import com.au.androidessentials.R
 import com.au.androidessentials.databinding.LayoutCirculerImageBinding
@@ -94,7 +97,13 @@ class AppImageView : CardView {
         postInvalidate()
     }
 
-
+    fun setDimensions(width:Float,height:Float){
+        Log.d(TAG, "setDimensions: width-> $width , height -> $height ")
+        layoutParams.width = width.toInt()
+        layoutParams.height = height.toInt()
+        requestLayout()
+    }
+    
     inner class Builder {
 
         fun setLayoutParams(layoutParams: LayoutParams): Builder {
