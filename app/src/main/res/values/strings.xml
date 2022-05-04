@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">ViewModel example</string>
-    <string name="add_new_contact">Add New Contact</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="test_text">Current solution has no view customization. Whole code will be outside regular TextView class without extending it. Layout is just a parent container ConstraintLayout with child TextView in the center. I have added it for it to be clickable with selectable item background which provides ripple animation on click for better visualization.</string>
-</resources>
