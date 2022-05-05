@@ -20,7 +20,6 @@ abstract class BaseFragment<viewBinding:ViewBinding>:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = bind(container)
-
         return binding.root
     }
 
